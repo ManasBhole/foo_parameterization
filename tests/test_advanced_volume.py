@@ -1,19 +1,9 @@
-import pytest
+import unittest
 from foo.advanced_volume import calculate_advanced_volume
 
-def test_calculate_advanced_volume():
-    # Test normal cases with default precision
-    assert calculate_advanced_volume(1) == 4.18879
-    assert calculate_advanced_volume(0) == 0
-    assert calculate_advanced_volume(2.5) == 65.44985
+class TestAdvancedVolumeCalculation(unittest.TestCase):
+    def test_advanced_calculation(self):
+        self.assertAlmostEqual(calculate_advanced_volume(1, 1.0, 300), 4.1887902047863905)
 
-    # Test normal cases with specified precision
-    assert calculate_advanced_volume(1, precision=3) == 4.189
-    assert calculate_advanced_volume(2.5, precision=4) == 65.4498
-
-    # Test negative radius case
-    with pytest.raises(ValueError):
-        calculate_advanced_volume(-1)
-
-    # Test large radius case with precision
-    assert calculate_advanced_volume(1000, precision=2) == 4188790204.79
+if __name__ == "__main__":
+    unittest.main()

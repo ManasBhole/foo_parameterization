@@ -1,3 +1,2 @@
-def validate_radius(radius):
-    if radius < 0:
-        raise ValueError("Radius cannot be negative.")
+def is_positive_number(value):
+    return value > 0

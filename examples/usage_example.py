@@ -1,8 +1,4 @@
-from foo.volume import calculate_volume
-from foo.advanced_volume import calculate_advanced_volume
+from foo import calculate_volume, calculate_advanced_volume
 
-radius = 5
-volume = calculate_volume(radius)
-advanced_volume = calculate_advanced_volume(radius, precision=5)
-print(f"Volume: {volume} cubic units")
-print(f"Advanced Volume: {advanced_volume} cubic units")
+print("Volume of a sphere with radius 5:", calculate_volume(5))
+print("Advanced volume calculation:", calculate_advanced_volume(5, 1.01, 295))
